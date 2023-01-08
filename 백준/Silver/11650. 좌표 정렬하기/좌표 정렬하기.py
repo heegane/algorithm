@@ -3,8 +3,6 @@ import sys
 N = int(input())
 
 arr = []
-arr_minus = []
-arr_plus = []
 
 for i in range(0, N):
     data = list(map(int, sys.stdin.readline().split()))
