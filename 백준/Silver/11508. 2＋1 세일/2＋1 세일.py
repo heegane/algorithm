@@ -1,7 +1,9 @@
+import sys
+
 N = int(input())
 price = []
 for _ in range(N):
-    data = int(input())
+    data = int(sys.stdin.readline().rstrip())
     price.append(data)
 price.sort(reverse=True)
 
