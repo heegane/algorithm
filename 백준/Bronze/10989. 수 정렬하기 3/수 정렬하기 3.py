@@ -12,6 +12,5 @@ for i in range(10001):
     if arr[i] == 0:
         continue
     else:
-        for j in range(arr[i]):
-            print(i)
-           
+        for _ in range(arr[i]):
+            sys.stdout.write(str(i) + "\n")
