@@ -12,4 +12,4 @@ for i in range(0, N):
 arr.sort(key=lambda x: x[0])
 
 for i in range(0, N):
-    print(f"{arr[i][0]} {arr[i][1]}")
+    sys.stdout.write(f"{arr[i][0]} {arr[i][1]}\n")
