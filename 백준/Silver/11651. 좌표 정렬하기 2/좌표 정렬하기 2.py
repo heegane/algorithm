@@ -1,13 +1,14 @@
 import sys
 
 N = int(input())
-result = []
+points = []
 
 for _ in range(N):
-    data = list(map(int, sys.stdin.readline().rstrip().split()))
-    result.append(data)
+    input_data = sys.stdin.readline().rstrip().split()
+    x, y = int(input_data[0]), int(input_data[1])
+    points.append([x, y])
 
-result.sort(key=lambda x: (x[1], x[0]))
+points.sort(key=lambda x: (x[1], x[0]))
 
 for i in range(N):
-    print(f"{result[i][0]} {result[i][1]}")
+    sys.stdout.write(str(points[i][0]) + " " + str(points[i][1]) + "\n")
