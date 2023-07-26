@@ -1,20 +1,17 @@
-n, m = map(int,input().split())
+import sys
 
-num = [i+1 for i in range(n)]
-visited = [False] * n
-answer = []
+n, m = map(int,sys.stdin.readline().rstrip().split())
+s = []
 
-def dfs(cnt):
-    # print(answer)
-    if cnt == m:
-        print(*answer)
+def dfs():
+    if len(s) == m:
+        sys.stdout.write(' '.join(map(str,s))+"\n")
         return
-    for i in range(n):
-        if visited[i] == True:
-            continue
-        visited[i] = True
-        answer.append(num[i])
-        dfs(cnt+1)
-        answer.pop()
-        visited[i] = False
-dfs(0)
+
+    for i in range(1,n+1):
+        if i not in s:
+            s.append(i)
+            dfs()
+            s.pop()
+
+dfs()
