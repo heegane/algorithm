@@ -7,7 +7,7 @@ li = sorted(list(map(int, input().split())))
 
 left, right = 0, n - 1
 answer_a, answer_b = 0, 0
-cmp_v = sys.maxsize
+cmp_v = 2000000000
 
 while left < right:
     sum_v = li[left] + li[right]
