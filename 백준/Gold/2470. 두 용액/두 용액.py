@@ -6,8 +6,8 @@ n = int(input())
 li = sorted(list(map(int, input().split())))
 
 left, right = 0, n - 1
-answer_a, answer_b = 0, 0
-cmp_v = 2000000000
+answer_a, answer_b = li[left], li[right]
+cmp_v = abs(li[left] + li[right])
 
 while left < right:
     sum_v = li[left] + li[right]
