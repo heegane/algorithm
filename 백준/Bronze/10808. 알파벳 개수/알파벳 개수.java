@@ -10,13 +10,13 @@ public class Main {
 		int[] arr = new int[26];
 
 		for (int i = 0; i < s.length(); i++) {
-			int index = (int)s.charAt(i) - 97;
+			int index = s.charAt(i) - 97;
 			arr[index] += 1;
 		}
 
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < arr.length; i++) {
-			sb.append(arr[i]).append(" ");
+		for (int cnt : arr) {
+			sb.append(cnt).append(" ");
 		}
 
 		bw.write(sb.toString());
