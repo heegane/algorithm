@@ -40,21 +40,21 @@ public class Main {
     }
 
     private static void canDivide(int x, int y, int[][] visited, char color) {
-        Stack<int[]> stack = new Stack<>();
-        stack.push(new int[]{x, y});
+        Queue<int[]> q = new LinkedList<>();
+        q.offer(new int[]{x, y});
         visited[x][y] = 1;
 
         int[] dxs = {-1, 1, 0, 0};
         int[] dys = {0, 0, -1, 1};
 
-        while (!stack.isEmpty()) {
-            int[] current = stack.pop();
+        while (!q.isEmpty()) {
+            int[] current = q.poll();
             int cx = current[0], cy = current[1];
             for (int i = 0; i < 4; i++) {
                 int nx = cx + dxs[i];
                 int ny = cy + dys[i];
                 if (nx >= 0 && nx < n && ny >= 0 && ny < n && visited[nx][ny] == 0 && graph[nx][ny] == color) {
-                    stack.push(new int[]{nx, ny});
+                    q.offer(new int[]{nx, ny});
                     visited[nx][ny] = 1;
                 }
             }
@@ -62,22 +62,22 @@ public class Main {
     }
 
     private static void canNotDivide(int x, int y, int[][] visited, char color) {
-        Stack<int[]> stack = new Stack<>();
-        stack.push(new int[]{x, y});
+        Queue<int[]> q = new LinkedList<>();
+        q.offer(new int[]{x, y});
         visited[x][y] = 1;
 
         int[] dxs = {-1, 1, 0, 0};
         int[] dys = {0, 0, -1, 1};
 
-        while (!stack.isEmpty()) {
-            int[] current = stack.pop();
+        while (!q.isEmpty()) {
+            int[] current = q.poll();
             int cx = current[0], cy = current[1];
             for (int i = 0; i < 4; i++) {
                 int nx = cx + dxs[i];
                 int ny = cy + dys[i];
                 if (nx >= 0 && nx < n && ny >= 0 && ny < n && visited[nx][ny] == 0) {
                     if (color == graph[nx][ny] || color == 'R' && graph[nx][ny] == 'G' || color == 'G' && graph[nx][ny] == 'R') {
-                        stack.push(new int[]{nx, ny});
+                        q.offer(new int[]{nx, ny});
                         visited[nx][ny] = 1;
                     }
                 }
