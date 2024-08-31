@@ -12,7 +12,7 @@ class Solution {
         
         while(cnt < jobs.length) {
             while(curIdx < jobs.length && curTime >= jobs[curIdx][0]) {
-                pq.add(new int[]{jobs[curIdx][0],jobs[curIdx][1]});
+                pq.add(jobs[curIdx]);
                 curIdx++;
             }
             if(pq.isEmpty()){
