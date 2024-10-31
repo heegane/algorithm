@@ -18,7 +18,7 @@ class Solution {
                 dfs(k-dungeon[1], dungeons, cnt + 1);
                 visited[i] = false;
             }
-        }      
+        }
         answer = Math.max(answer, cnt);
     }
 }
