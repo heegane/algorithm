@@ -10,13 +10,13 @@ class Solution {
         for(int i = 1; i < words.length; i++) {
             String word = words[i];
             if(pre != word.charAt(0)) {
-                answer[0] = (i + 1) % n == 0 ? n : (i + 1) % n;
-                answer[1] = (i + 1) % n == 0 ? (i + 1) / n : (i + 1) / n + 1;
+                answer[0] = i % n + 1;
+                answer[1] = i / n + 1;
                 return answer;
             }
             if(map.containsKey(word)) {
-                answer[0] = (i + 1) % n == 0 ? n : (i + 1) % n;
-                answer[1] = (i + 1) % n == 0 ? (i + 1) / n : (i + 1) / n + 1;
+                answer[0] = i % n + 1;
+                answer[1] = i / n + 1;
                 return answer;
             } else {
                 map.put(word, true);
